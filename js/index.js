@@ -4,7 +4,7 @@
 
 var carousel = document.querySelector('.carousel');
 var flkty = new Flickity( carousel, {
-  hash: true,
+  hash: true, wrapAround: true
 });
 
 var progressBar = document.querySelector('.progress-bar');
