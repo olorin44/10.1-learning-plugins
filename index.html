@@ -11,8 +11,16 @@
 	</head>
 	<body>
 		<div class="carousel">
-		  <div class="carousel-cell" id="carousel-cell-warszawa" style="background-image: url(images/warszawa.jpg);">
-		  	<div class="container">Warszawa</div>
+		  <div class="carousel-cell" id="carousel-cell-warszawa">
+		  	<div class="container">
+			<script id="gallery-template" type="x-tmpl-mustache">
+			<h3> {{ title }} </h3>
+			<ul>
+				{{{ image }}}
+				{{{ description }}}
+			</ul>
+			</script>
+		  	Warszawa</div>
 		  </div>
 		  <div class="carousel-cell" id="carousel-cell-gdansk" style="background-image: url(images/gdansk.jpg);">
 		  	<div class="container">Gdańsk</div>
@@ -46,9 +54,50 @@
 		<div class="button-group">
   			<button class="restart-btn" data-selector="#carousel-cell-warszawa">Restart</button>
   		</div>
+		<script>
+		var galleryData = [
+			{
+				image: 'url(images/warszawa.jpg)', 
+				title: 'Warszawa',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			},
+			{
+				image: 'images/gdansk.jpg', 
+				title: 'Gdańsk',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			},
+			{
+				image: 'obrazek666', 
+				title: 'Katowice',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			},
+			{
+				image: 'obrazek666', 
+				title: 'Wrocław',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			},
+			{
+				image: 'obrazek666', 
+				title: 'Białystok',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			},
+			{
+				image: 'obrazek666', 
+				title: 'Szczecin',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			},
+			{
+				image: 'obrazek666', 
+				title: 'Lublin',
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+			}
+		];
+		</script>
+
 
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
+		<script src="vendor/mustache.js"></script>
 		<script src="js/index.js"></script>
 	</body>
 </html>
