@@ -11,7 +11,7 @@ for(var i = 0; i < galleryData.length; i++){
 	console.log(galleryData);
 	console.log(galleryList);
 var carouselMain = document.getElementById('carousel-main');
-carouselMain.insertAdjacentHTML('beforeend', galleryList);
+carouselMain.insertAdjacentHTML('beforeEnd', galleryList);
 /////
 var carousel = document.querySelector('.carousel');
 var flkty = new Flickity( carousel, {

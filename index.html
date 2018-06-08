@@ -11,14 +11,13 @@
 	</head>
 	<body>
 		<div class="carousel" id="carousel-main">
-			<div class="carousel-cell" >
+			<div class="carousel-cell">
 				<div class="container">
 					<script id="gallery-template" type="x-tmpl-mustache">						  	
 						<h3> {{ title }} </h3>
-						<ul>
-							<img src={{{ image }}}>
-							{{{ description }}}
-						</ul>
+						<img src="{{{ image }}}">
+						{{{ description }}}
+						{{{ restart }}}
 					</script>
 				</div>
 			</div>
@@ -32,7 +31,8 @@
 			{
 				image: 'images/warszawa.jpg', 
 				title: 'Warszawa',
-				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
+				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+				restart: '<span id="carousel-cell-warszawa"></span>'
 			},
 			{
 				image: 'images/gdansk.jpg', 
@@ -50,7 +50,7 @@
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
 			{
-				image: 'images/bialystok.jpg', 
+				image: 'images/bialystok2.jpg', 
 				title: 'Białystok',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
