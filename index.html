@@ -3,61 +3,34 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>10.1-plugins</title>
+		<title>10.2-plugins</title>
 		<link rel="stylesheet" type="text/css" href="vendor/normalize.css">
 		<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	</head>
 	<body>
-		<div class="carousel">
-		  <div class="carousel-cell" id="carousel-cell-warszawa">
-		  	<div class="container">
-			<script id="gallery-template" type="x-tmpl-mustache">
-			<h3> {{ title }} </h3>
-			<ul>
-				{{{ image }}}
-				{{{ description }}}
-			</ul>
-			</script>
-		  	Warszawa</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-gdansk" style="background-image: url(images/gdansk.jpg);">
-		  	<div class="container">Gdańsk</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-katowice" style="background-image: url(images/katowice.jpg);">
-		  	<div class="container">Katowice</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-wroclaw" style="background-image: url(images/wroclaw.jpg);">
-		  	<div class="container">Wrocław</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-bialystok" style="background-image: url(images/bialystok2.jpg);">
-		  	<div class="container">Białystok</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-szczecin" style="background-image: url(images/szczecin.jpg);">
-		  	<div class="container">Szczecin</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-lublin" style="background-image: url(images/lublin.jpg);">
-		  	<div class="container">Lublin</div>
-		  </div>
-		</div>
+		<div class="carousel" id="carousel-main">
+			<div class="carousel-cell" >
+				<div class="container">
+					<script id="gallery-template" type="x-tmpl-mustache">						  	
+						<h3> {{ title }} </h3>
+						<ul>
+							<img src={{{ image }}}>
+							{{{ description }}}
+						</ul>
+					</script>
+				</div>
+			</div>
+		</div>						
 		<div class="progress-bar"></div>
-		<div class="carousel-links">
-			<a href="#carousel-cell-warszawa"></a>
-			<a href="#carousel-cell-gdansk"></a>
-			<a href="#carousel-cell-katowice"></a>
-			<a href="#carousel-cell-wroclaw"></a>
-			<a href="#carousel-cell-bialystok"></a>
-			<a href="#carousel-cell-szczecin"></a>
-			<a href="#carousel-cell-lublin"></a>
-		</div>
 		<div class="button-group">
   			<button class="restart-btn" data-selector="#carousel-cell-warszawa">Restart</button>
   		</div>
 		<script>
 		var galleryData = [
 			{
-				image: 'url(images/warszawa.jpg)', 
+				image: 'images/warszawa.jpg', 
 				title: 'Warszawa',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
@@ -67,33 +40,32 @@
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
 			{
-				image: 'obrazek666', 
+				image: 'images/katowice.jpg', 
 				title: 'Katowice',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
 			{
-				image: 'obrazek666', 
+				image: 'images/wroclaw.jpg', 
 				title: 'Wrocław',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
 			{
-				image: 'obrazek666', 
+				image: 'images/bialystok.jpg', 
 				title: 'Białystok',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
 			{
-				image: 'obrazek666', 
+				image: 'images/szczecin.jpg', 
 				title: 'Szczecin',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			},
 			{
-				image: 'obrazek666', 
+				image: 'images/lublin.jpg', 
 				title: 'Lublin',
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			}
 		];
 		</script>
-
 
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
