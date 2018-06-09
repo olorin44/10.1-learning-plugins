@@ -7,7 +7,7 @@ body {
 }
 
 .carousel {
-	height: 50vh;
+	height: 350px;
 	min-height: 250px;
 	width: 100%;
 
@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-	color: white;
+	color: grey;
 	font-size: 2em;
 	font-weight: bold;
 	margin: 0 auto;
@@ -30,6 +30,15 @@ body {
 .flickity-page-dots {
 	display: none;
 }
+
+#infos {
+	color: grey;
+}
+
+#map {
+        height: 350px;
+        width: 100%;
+       }
 
 .progress-bar {
   height: 20px;
