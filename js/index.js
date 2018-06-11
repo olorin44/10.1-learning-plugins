@@ -36,22 +36,49 @@ buttonGroup.addEventListener( 'click', function( event ) {
 window.initMap = function() {
 	var warszawa = {lat: 52.231593, lng: 21.019990};
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 4,
+		zoom: 6,
 		center: warszawa
 		});
 
-	galleryData.forEach(function (dataElement) {
+	galleryData.forEach(function ( dataElement ) {
 		var marker = new google.maps.Marker({
 			position: dataElement.coords,
 			map: map
 		})
+
 		var title = dataElement.title;
-		marker.addListener('click', function(dataElement){
+		marker.addListener( 'click', function( dataElement ){
 			infos.innerHTML = 'You clicked marker ' + title;
-		})
+			//////
+			flkty.selectCell( title );
+  			/////
+		});
+
 	});
+			flkty.on( 'change', function() {//////
+						console.log( 'dupa');//////
+						map.panTo( galleryData.coords );////////
+						});///////
+	// document.getElementById('center-map').addEventListener('click', function(event){
+	// 		event.preventDefault();
+	// 		// Najpierw wykorzystujemy metodę panTo w obiekcie map do przesunięcia współrzędnych mapy:
+	// 		map.panTo(sydney);
+			
+	// 		// A następnie zmieniamy powiększenie mapy:
+	// 		map.setZoom(10);
+	// 	});
 
-	}
 
+	/////
+		// flkty.on( 'change', function( index ) {
+		// 	console.log( 'dupa');
+		// });
+	/////
+	};
+///////////////////
+// flkty.on( 'change', function( index ) {
+// 			console.log('dupa');
+// 		});
+//////////////////
 
   })();
