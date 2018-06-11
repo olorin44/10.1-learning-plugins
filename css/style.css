@@ -12,10 +12,12 @@ body {
   width: 100%;
 }
 
-.carousel img {
+.carousel-cell {
+  background-size: cover;
   border-radius: 5px;
   height: 100%;
   margin-right: 10px;
+  width: 600px;
 }
 
 .container {

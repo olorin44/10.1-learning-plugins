@@ -9,7 +9,7 @@ for(var i = 0; i < galleryData.length; i++){
 	}
 
 var carouselMain = document.getElementById('carousel-main');
-carouselMain.insertAdjacentHTML('beforeEnd', galleryList);
+carouselMain.innerHTML = galleryList;
 
 var carousel = document.querySelector('.carousel');
 var flkty = new Flickity( carousel, {
@@ -45,6 +45,7 @@ window.initMap = function() {
 			position: dataElement.coords,
 			map: map
 		})
+		var infos = getElementById('infos');
 		var title = dataElement.title;
 		marker.addListener('click', function(dataElement){
 			infos.innerHTML = 'You clicked marker ' + title;

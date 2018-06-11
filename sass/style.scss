@@ -10,12 +10,14 @@ body {
 	height: 350px;
 	min-height: 250px;
 	width: 100%;
+}
 
-	img {
-		border-radius: 5px;
-		height: 100%;
-		margin-right: 10px;
-	}
+.carousel-cell {
+	background-size: cover;
+	border-radius: 5px;
+	height: 100%;
+  	margin-right: 10px;
+  	width: 600px;
 }
 
 .container {
