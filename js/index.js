@@ -45,7 +45,7 @@ window.initMap = function() {
 			position: dataElement.coords,
 			map: map
 		})
-		var infos = getElementById('infos');
+		var infos = document.querySelector('#infos');
 		var title = dataElement.title;
 		marker.addListener('click', function(dataElement){
 			infos.innerHTML = 'You clicked marker ' + title;
