@@ -60,26 +60,8 @@ window.initMap = function() {
 						console.log( 'dupa');//////
 						map.panTo( galleryData.coords );////////
 						});///////
-	// document.getElementById('center-map').addEventListener('click', function(event){
-	// 		event.preventDefault();
-	// 		// Najpierw wykorzystujemy metodę panTo w obiekcie map do przesunięcia współrzędnych mapy:
-	// 		map.panTo(sydney);
-			
-	// 		// A następnie zmieniamy powiększenie mapy:
-	// 		map.setZoom(10);
-	// 	});
 
-
-	/////
-		// flkty.on( 'change', function( index ) {
-		// 	console.log( 'dupa');
-		// });
-	/////
 	};
-///////////////////
-// flkty.on( 'change', function( index ) {
-// 			console.log('dupa');
-// 		});
-//////////////////
+
 
   })();
