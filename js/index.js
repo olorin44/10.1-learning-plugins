@@ -1,18 +1,16 @@
 'use strict';
 
 (function() {
-/////
 
 var galleryTemplate = document.getElementById('gallery-template').innerHTML;
 var galleryList = '';
 for(var i = 0; i < galleryData.length; i++){
 		galleryList += Mustache.render(galleryTemplate, galleryData[i]);
 	}
-	console.log(galleryData);
-	console.log(galleryList);
+
 var carouselMain = document.getElementById('carousel-main');
-carouselMain.insertAdjacentHTML('beforeEnd', galleryList);
-/////
+carouselMain.innerHTML = galleryList;
+
 var carousel = document.querySelector('.carousel');
 var flkty = new Flickity( carousel, {
   hash: true, wrapAround: true

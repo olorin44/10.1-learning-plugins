@@ -11,17 +11,6 @@
 	</head>
 	<body>
 		<div class="carousel" id="carousel-main">
-			<div class="carousel-cell">
-				<div class="container">
-					<script id="gallery-template" type="x-tmpl-mustache">						  	
-						<h3> {{ title }} </h3>
-						<img src="{{{ image }}}">
-						{{{ description }}}
-						{{{ restart }}}
-					</script>
-				</div>
-			</div>
-		</div>						
 		<div class="progress-bar"></div>
 		<div class="button-group">
   			<button class="restart-btn" data-selector="#carousel-cell-warszawa">Restart</button>
@@ -31,8 +20,7 @@
 			{
 				image: 'images/warszawa.jpg', 
 				title: 'Warszawa',
-				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
-				restart: '<span id="carousel-cell-warszawa"></span>'
+				description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p> <span id="carousel-cell-warszawa"></span>'
 			},
 			{
 				image: 'images/gdansk.jpg', 
@@ -65,6 +53,11 @@
 				description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>"
 			}
 		];
+		</script>
+		
+		<script id="gallery-template" type="x-tmpl-mustache">
+			<div class="carousel-cell" style="background-image: url( {{ image }} );">{{ title }}</div>
+			{{{ description }}}
 		</script>
 
 		<script src="vendor/flickity.pkgd.min.js"></script>
