@@ -33,35 +33,38 @@ buttonGroup.addEventListener( 'click', function( event ) {
   flkty.selectCell( selector );
 });
 
-window.initMap = function() {
+window.initMap = function(element) {
 	var warszawa = {lat: 52.231593, lng: 21.019990};
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 6,
 		center: warszawa
 		});
 
-	galleryData.forEach(function ( dataElement ) {
+	galleryData.forEach(function (element) {
+		// console.log(element.coords)
 		var marker = new google.maps.Marker({
-			position: dataElement.coords,
+			position: element.coords,
 			map: map
 		})
 
 		var infos = document.querySelector('#infos');
-		var title = dataElement.title;
-		marker.addListener( 'click', function( dataElement ){
+		var title = element.title;
+		marker.addListener( 'click', function(){
 			infos.innerHTML = 'You clicked marker ' + title;
+			// console.log(element)
+			// infos.innerHTML = cities
 			//////
 			flkty.selectCell( title );
-  			/////
+			// console.log(flkty.selectCell( (title) )
 		});
-
+// console.log(element.coords)
 	});
 			flkty.on( 'change', function() {//////
-						console.log( 'dupa');//////
-						map.panTo( galleryData.coords );////////
+						// console.log(element.title);//////
+						// map.panTo( element );////////
+						// map.panTo( {lat: 52.231593, lng: 21.019990} );
 						});///////
 
 	};
-
 
   })();
