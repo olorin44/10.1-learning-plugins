@@ -51,8 +51,7 @@ window.initMap = function(element) {
 		var title = element.title;
 		marker.addListener( 'click', function(){
 			infos.innerHTML = 'You clicked marker ' + title;
-			// console.log(element)
-			// infos.innerHTML = cities
+			console.log(element)
 			//////
 			flkty.selectCell( title );
 			// console.log(flkty.selectCell( (title) )
@@ -60,8 +59,7 @@ window.initMap = function(element) {
 // console.log(element.coords)
 	});
 			flkty.on( 'change', function() {//////
-						// console.log(element.title);//////
-						// map.panTo( element );////////
+						// map.panTo();////////
 						// map.panTo( {lat: 52.231593, lng: 21.019990} );
 						});///////
 
