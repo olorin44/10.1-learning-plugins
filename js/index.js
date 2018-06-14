@@ -13,7 +13,7 @@ carouselMain.innerHTML = galleryList;
 
 var carousel = document.querySelector('.carousel');
 var flkty = new Flickity( carousel, {
-  hash: true, wrapAround: true
+	wrapAround: true
 });
 
 var progressBar = document.querySelector('.progress-bar');
@@ -29,8 +29,7 @@ buttonGroup.addEventListener( 'click', function( event ) {
   if ( !matchesSelector( event.target, '.restart-btn' ) ) {
     return;
   }
-  var selector = event.target.getAttribute('data-selector');
-  flkty.selectCell( selector );
+  flkty.select(0);
 });
 
 

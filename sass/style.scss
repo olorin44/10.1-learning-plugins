@@ -3,25 +3,26 @@
 }
 
 body {
+	background-color: #f1f2f6;
 	font-family: 'Roboto', sans-serif;
 }
 
 .carousel {
 	height: 50vh;
-	min-height: 250px;
+	min-height:  250px;
 	width: 100%;
 }
 
 .carousel-cell {
 	background-size: cover;
 	border-radius: 5px;
-	height: 100%;
+	height: 350px;
   	margin-right: 10px;
   	width: 600px;
 }
 
 .container {
-	color: white;
+	color: grey;
 	font-size: 2em;
 	font-weight: bold;
 	margin: 0 auto;
@@ -48,3 +49,6 @@ body {
 	text-transform: uppercase;
 }
 
+.template-container {
+	text-align: center;
+}
