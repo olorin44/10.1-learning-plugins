@@ -13,7 +13,7 @@ carouselMain.innerHTML = galleryList;
 
 var carousel = document.querySelector('.carousel');
 var flkty = new Flickity( carousel, {
-  hash: true, wrapAround: true
+	wrapAround: true
 });
 
 var progressBar = document.querySelector('.progress-bar');
@@ -29,27 +29,27 @@ buttonGroup.addEventListener( 'click', function( event ) {
   if ( !matchesSelector( event.target, '.restart-btn' ) ) {
     return;
   }
-  var selector = event.target.getAttribute('data-selector');
-  flkty.selectCell( selector );
+  flkty.select(0);
 });
 
 window.initMap = function() {
 	var warszawa = {lat: 52.231593, lng: 21.019990};
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 4,
+		zoom: 6,
 		center: warszawa
 		});
 
-	galleryData.forEach(function (dataElement) {
+	galleryData.forEach(function (element, index) {
 		var marker = new google.maps.Marker({
-			position: dataElement.coords,
+			position: element.coords,
 			map: map
 		})
 		var infos = document.querySelector('#infos');
-		var title = dataElement.title;
-		marker.addListener('click', function(dataElement){
+		var title = galleryData[index].title;
+		infos.innerHTML = 'Click on the marker';
+		marker.addListener('click', function(event){
 			infos.innerHTML = 'You clicked marker ' + title;
-		})
+		});
 	});
 
 	}
