@@ -17,7 +17,6 @@
   			<button class="restart-btn" data-selector="#carousel-cell-warszawa">Restart</button>
   		</div>
 	    <div id="page-wrapper" class="container">
-			<h3>My Map</h3>
 			<p id="infos"></p>
 		    <div id="map"></div>
 		</div>
@@ -69,9 +68,11 @@
 		</script>
 
 		<script id="gallery-template" type="x-tmpl-mustache">
-			<h3>{{title}}</h3>
-			<div class="carousel-cell" style="background-image: url( {{ image }} );"></div>
-			{{{ description }}}
+			<div class="template-container">
+				<h3>{{ title }}</h3>
+				<div class="carousel-cell" style="background-image: url( {{ image }} );"></div>
+				{{{ description }}}
+			</div>
 		</script>
 
 		<script src="vendor/flickity.pkgd.min.js"></script>

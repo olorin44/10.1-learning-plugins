@@ -29,8 +29,7 @@ buttonGroup.addEventListener( 'click', function( event ) {
   if ( !matchesSelector( event.target, '.restart-btn' ) ) {
     return;
   }
-  var selector = event.target.getAttribute('data-selector');
-  flkty.selectCell( selector );
+  flkty.select(0);
 });
 
 window.initMap = function(element) {
@@ -40,28 +39,24 @@ window.initMap = function(element) {
 		center: warszawa
 		});
 
-	galleryData.forEach(function (element) {
-		// console.log(element.coords)
+	galleryData.forEach(function (element, index) {
 		var marker = new google.maps.Marker({
 			position: element.coords,
 			map: map
 		})
 
 		var infos = document.querySelector('#infos');
-		var title = element.title;
-		marker.addListener( 'click', function(){
-			infos.innerHTML = 'You clicked marker ' + title;
-			console.log(element)
-			//////
-			flkty.selectCell( title );
-			// console.log(flkty.selectCell( (title) )
+		var title = galleryData[index].title;
+		infos.innerHTML = 'Click on the marker';
+		marker.addListener( 'click', function(event){
+			flkty.selectCell( index );
+			infos.innerHTML = 'You clicked marker '+ title;
 		});
-// console.log(element.coords)
 	});
-			flkty.on( 'change', function() {//////
-						// map.panTo();////////
-						// map.panTo( {lat: 52.231593, lng: 21.019990} );
-						});///////
+			flkty.on( 'change', function(index) {
+				var coords = galleryData[index].coords
+						map.panTo(coords);
+						});
 
 	};
 
