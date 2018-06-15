@@ -33,10 +33,10 @@ buttonGroup.addEventListener( 'click', function( event ) {
 });
 
 window.initMap = function(element) {
-	var warszawa = {lat: 52.231593, lng: 21.019990};
+	var warsawCoords = {lat: 52.231593, lng: 21.019990};
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 6,
-		center: warszawa
+		center: warsawCoords
 		});
 
 	galleryData.forEach(function (element, index) {
