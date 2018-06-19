@@ -3,52 +3,82 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>10.1-plugins</title>
+		<title>10.4-maps and carousel</title>
 		<link rel="stylesheet" type="text/css" href="vendor/normalize.css">
 		<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	</head>
 	<body>
-		<div class="carousel">
-		  <div class="carousel-cell" id="carousel-cell-warszawa" style="background-image: url(images/warszawa.jpg);">
-		  	<div class="container">Warszawa</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-gdansk" style="background-image: url(images/gdansk.jpg);">
-		  	<div class="container">Gdańsk</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-katowice" style="background-image: url(images/katowice.jpg);">
-		  	<div class="container">Katowice</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-wroclaw" style="background-image: url(images/wroclaw.jpg);">
-		  	<div class="container">Wrocław</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-bialystok" style="background-image: url(images/bialystok2.jpg);">
-		  	<div class="container">Białystok</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-szczecin" style="background-image: url(images/szczecin.jpg);">
-		  	<div class="container">Szczecin</div>
-		  </div>
-		  <div class="carousel-cell" id="carousel-cell-lublin" style="background-image: url(images/lublin.jpg);">
-		  	<div class="container">Lublin</div>
-		  </div>
+		<div class="carousel" id="carousel-main">
 		</div>
 		<div class="progress-bar"></div>
-		<div class="carousel-links">
-			<a href="#carousel-cell-warszawa"></a>
-			<a href="#carousel-cell-gdansk"></a>
-			<a href="#carousel-cell-katowice"></a>
-			<a href="#carousel-cell-wroclaw"></a>
-			<a href="#carousel-cell-bialystok"></a>
-			<a href="#carousel-cell-szczecin"></a>
-			<a href="#carousel-cell-lublin"></a>
-		</div>
 		<div class="button-group">
   			<button class="restart-btn" data-selector="#carousel-cell-warszawa">Restart</button>
   		</div>
+	    <div id="page-wrapper" class="container">
+			<p id="infos"></p>
+		    <div id="map"></div>
+		</div>
+		<script>
+			var galleryData = [
+				{
+					image: 'images/warszawa.jpg', 
+					title: 'Warszawa',
+					description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p> <span id="carousel-cell-warszawa"></span>',
+					coords: {lat: 52.231593, lng: 21.019990}
+				},
+				{
+					image: 'images/gdansk.jpg', 
+					title: 'Gdańsk',
+					description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+					coords: {lat: 54.369558, lng: 18.611070}
+				},
+				{
+					image: 'images/katowice.jpg', 
+					title: 'Katowice',
+					description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+					coords: {lat: 50.234299, lng: 19.029851}
+				},
+				{
+					image: 'images/wroclaw.jpg', 
+					title: 'Wrocław',
+					description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+					coords: {lat: 51.128134, lng: 16.995639}
+				},
+				{
+					image: 'images/bialystok2.jpg', 
+					title: 'Białystok',
+					description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+					coords: {lat: 53.131725, lng: 23.155378}
+				},
+				{
+					image: 'images/szczecin.jpg', 
+					title: 'Szczecin',
+					description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+					coords: {lat: 53.425523, lng: 14.588913}
+				},
+				{
+					image: 'images/lublin.jpg', 
+					title: 'Lublin',
+					description: "<p>Lorem ipsum.</p> <p>Dolor sit.</p>",
+					coords: {lat: 51.236793, lng: 22.559306}
+				}
+			];
+		</script>
+
+		<script id="gallery-template" type="x-tmpl-mustache">
+			<div class="template-container">
+				<h3>{{ title }}</h3>
+				<div class="carousel-cell" style="background-image: url( {{ image }} );"></div>
+				{{{ description }}}
+			</div>
+		</script>
 
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
+		<script src="vendor/mustache.js"></script>
 		<script src="js/index.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLCv7CpV0YU0zfs2BNfEaQgHxYClYbIb8&callback=initMap"></script>
 	</body>
 </html>

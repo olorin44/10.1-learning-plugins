@@ -1,19 +1,63 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-body { font-family: 'Roboto', sans-serif; }
+body {
+  background-color: #f1f2f6;
+  font-family: 'Roboto', sans-serif;
+}
 
-.carousel { height: 50vh; min-height: 250px; width: 100%; }
+.carousel {
+  height: 500px;
+  width: 100%;
+}
 
-.carousel-cell { background-size: cover; border-radius: 5px; height: 100%; margin-right: 10px; width: 600px; }
+.carousel-cell {
+  background-size: cover;
+  border-radius: 5px;
+  height: 350px;
+  margin-right: 10px;
+  width: 600px;
+}
 
-.carousel-links { text-align: center; }
+.container {
+  color: grey;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
 
-.carousel-links > a { text-decoration: none; }
+.flickity-page-dots {
+  display: none;
+}
 
-.container { color: white; font-size: 2em; font-weight: bold; margin: 0 auto; max-width: 1200px; text-align: center; }
+#infos {
+  color: grey;
+}
 
-.flickity-page-dots { display: none; }
+#map {
+  height: 300px;
+  width: 100%;
+}
 
-.progress-bar { height: 20px; width: 0; background: #333; }
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
+}
 
-.restart-btn { background-color: orange; border-radius: 10px; color: blue; font-weight: bold; padding: 5px; text-transform: uppercase; }
+.restart-btn {
+  background-color: orange;
+  border-radius: 10px;
+  color: blue;
+  font-weight: bold;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+.template-container {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
